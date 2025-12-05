@@ -1,0 +1,23 @@
+{
+  "name": "WA Glass Shortcuts",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "description": "Apple-style glass shortcut bar for WhatsApp Web.",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ],
+  "action": {
+    "default_title": "WA Glass Shortcuts"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
